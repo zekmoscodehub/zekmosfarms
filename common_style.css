@@ -7,8 +7,10 @@
     box-sizing: border-box;
    
 }
-img.logo{
+.icon{
     width: 100px;
+    margin-right: 80px;
+    margin-left: -100px;
 }
 
 .material-symbols-outlined {
