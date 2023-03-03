@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat&family=Poppins&family=Rubik+Iso&display=swap');
 *{
     margin: 0;
@@ -6,6 +7,12 @@
     box-sizing: border-box;
    
 }
+.card-img{
+    width: 100%;
+   height:100vh;
+    background:radial-gradient(purple,blue);
+}
+
 .card-title1{
     color:green;
 }
@@ -26,4 +33,5 @@ font-family: 'Montserrat', sans-serif;
 }
 .main-title{
     font-family: 'Tilt Prism', cursive;
+    font-weight: 600;
 }
