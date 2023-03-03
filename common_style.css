@@ -39,9 +39,17 @@
     margin-top: 30%;
     background: transparent;
 }
+button.btn:hover{
+    border:1px solid #fff;
+   background:transparent;
+   color:coral;
+   font-weight:500;
+   font-family: 'Montserrat', sans-serif;
+   
+   }
 
-a.btn:hover{
- border:1px solid #fff;
+ a.btn:hover{
+ border:1px solid #838181;
 background:transparent;
 color:coral;
 font-weight:600;
