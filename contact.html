@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
-
 <body>
   <div class="contact-main">
     <div class="brand">
@@ -60,16 +59,24 @@
           <div class="container  w-50 contact">
     <form>
         <div class="mb-3">
-          <span class="input-group-text">Name</span>
-          <input type="text" class="form-control fields" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
-          <input type="email" class="form-control fields" id="exampleInputEmail1" aria-describedby="nameHelp" placeholder="Email">  
+          <div class="input-group fields">
+            <span class="input-group-text">First and last name</span>
+            <input type="text" aria-label="First name" class="form-control">
+            <input type="text" aria-label="Last name" class="form-control">
+          </div>    
+          <div class="input-group fields">
+            <span class="input-group-text">Email @</span>
+            <input type="email" aria-label="email" class="form-control">
+            </div>
         </div>
         <div class="mb-3">
-           <div class="input-group">
+           <div class="input-group fields">
             <span class="input-group-text">Cemments area</span>
-            <textarea class="form-control" aria-label="With textarea"></textarea>
-          </div>
+
+             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div><span class="field"><input type="checkbox" class="checkbox"></span>
           <label class="form-check-label" for="exampleCheck1">Keep ne with updates</label>
+          
         </div>
         <button type="submit" class="btn btn-primary position-relative">Send</button>
       </form>
