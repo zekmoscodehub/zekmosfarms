@@ -14,6 +14,7 @@
 </head>
 
 <body>
+  <div class="contact-main">
     <div class="brand">
     <nav class="navbar justify-content-center navbar-expand-lg bg-body-tertiarynavbar bg-body-secondary">
         <div class="container"><div class="log">
@@ -56,24 +57,23 @@
         </div>
       </nav>
       </div>
-          <div class="container  w-50">
+          <div class="container  w-50 contact">
     <form>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Full name</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name">
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="nameHelp" placeholder="Name">
-          
+          <span class="input-group-text">Name</span>
+          <input type="text" class="form-control fields" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+          <input type="email" class="form-control fields" id="exampleInputEmail1" aria-describedby="nameHelp" placeholder="Email">  
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+           <div class="input-group">
+            <span class="input-group-text">Cemments area</span>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+          </div>
+          <label class="form-check-label" for="exampleCheck1">Keep ne with updates</label>
         </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary position-relative">Send</button>
       </form>
     </div>
+  </div>
 </body>
 </html>

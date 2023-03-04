@@ -65,4 +65,23 @@ font-family: 'Montserrat', sans-serif;
 }
 
 
-/* main index styling end>
+/* main index styling end */
+
+/* contact side */
+
+.contact-main{
+    background-image:url('bg-Top.svg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position:center;
+    width: 100%;
+    height: 100vh;
+}.contact{
+    margin-top: 6%;
+    color: #fff;
+}
+.fields{
+    margin-top: 1.5rem;
+
+    padding-top: 10rem;
+}
