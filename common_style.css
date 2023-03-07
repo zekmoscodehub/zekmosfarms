@@ -5,7 +5,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
+       
+}
+.brands{
+    font-family: Poppins, sans-serif;
 }
 
 .fa{
@@ -19,12 +22,15 @@
 }
 .card-title{
     letter-spacing: .2rem;
-    line-height: .5rem;
+    line-height:0.5rem;
 }
-.icon{
-    width: 100px;
-    margin-right: 80px;
-    margin-left: -100px;
+.logo{
+    width: 80px;
+    height:80px;
+    border-radius: 50%;
+}
+.icons{
+    width:25px;
 }
 
 .material-symbols-outlined {
