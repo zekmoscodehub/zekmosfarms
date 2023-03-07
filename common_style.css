@@ -9,7 +9,17 @@
 }
 
 .fa{
-    color:#fff;
+    color:#f5a97e;
+}
+.fa-arrow-circle-right:hover{
+   color:coral;
+}
+.img-home{
+    width:50px
+}
+.card-title{
+    letter-spacing: .2rem;
+    line-height: .5rem;
 }
 .icon{
     width: 100px;
@@ -24,10 +34,15 @@
   'GRAD' 0,
   'opsz' 48
 }
+
 .card-title1{
     color:green;
 }
 .main{
+    color:rgb(199, 208, 247);
+    
+}
+span{
     color:Coral;
     
 }
@@ -52,10 +67,7 @@ font-weight:600;
 font-family: 'Montserrat', sans-serif;
 
 }
-.main-title{
-    font-family: 'Tilt Prism', cursive;
-    font-weight: 600;
-}
+
 /* main index styling start */
 .main-index{
     background-image:url('bg-Top.svg');
