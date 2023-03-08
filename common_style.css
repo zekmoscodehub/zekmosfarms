@@ -7,6 +7,21 @@
     box-sizing: border-box;
        
 }
+.main-index{
+    max-width: 1440px;
+    margin: 0 auto;
+    -webkit-box-shadow: 0px 5px 5px rgb(0 0 0 / 15%);
+    box-shadow: 0px 5px 5px rgb(0 0 0 / 15%);
+    background-color: #E2E7EA;
+}
+body{
+    font-family: "avenir_next",sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #565656;
+    background-color: #fff;
+    font-weight: 400;
+}
 .brands{
     font-family: Poppins, sans-serif;
 }
@@ -32,13 +47,8 @@
   'opsz' 48
 }
 
-.card-title1{
-    color:green;
-}
-.main{
-    color:rgb(199, 208, 247);
-    
-}
+
+
 span{
     color:Coral;
     
@@ -67,8 +77,8 @@ font-family: 'Montserrat', sans-serif;
 
 /* main index styling start */
 .main-index{
-    background-image:url('bg-Top.svg');
-    background-position: bottom-center;
+    background-image:url('guineas-fowl.jpg');
+    background-position: top center;
     background-size:cover;
     background-attachment: fixed;
     position: relative;
@@ -80,7 +90,7 @@ font-family: 'Montserrat', sans-serif;
 /* contact side */
 
 .contact-main{
-    background-image:url('bg-Top.svg');
+    background-image:url('white_bg_keet.png');
     background-size: cover;
     background-attachment: fixed;
     background-position:center;
