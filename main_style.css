@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+html{
+    font-size: 10px;
+    scroll-behavior:smooth;
+}
+/*index page start*/
+.index{
+    background:url('guineas-fowl.jpg');
+    position: relative;
+    background-position:top center;
+    background-size:cover;
+}
+/*index page end*/
+  
+/*titles start*/
+.front-title{
+   font-size: 12em;
+   color: #fff;
+   font-family: cursive;
+}
+.second-title{
+    font-size: 5em;
+    color:rgb(245, 153, 119);
+}
+.thired-title{
+    font-size: 3em;
+    margin-top:5%;
+    color:coral;
+}
+/*titles end*/
+
+/*buttons start*/
+.btn1{
+    text-align: center;
+    justify-content: center;
+    margin-left:40%;
+    margin-top: 6%;
+    margin-bottom: 10%;
+    
+}
+.social{
+    font-size: 16px;
+    color:gray;
+}
+.fa-arrow-right{
+    font-size: 10px;
+}
+ .fa-brands{
+   
+    text-align: none; 
+}
+
+ .fa-brands:hover{
+    color:rgb(248, 100, 100);
+}
+/*nav links start*/
+.navbar-nav .nav-link{
+    color:coral;
+    font-size:14px;
+}
+.navbar-nav .nav-link:hover{
+    border-bottom: 2px solid coral;
+}
+/*nav links end*/
+/* button end*/
+/*Home body start*/
+.slide{
+    margin-top: -18%;
+
+}
+.carousel-item p{
+    color:rgb(135, 216, 135);
+}
+/*Home body end*/
+/*cards start*/
+span{
+    color: rgb(25, 92, 238);
+    font-weight: 600;
+}
+.title{
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.card-title{
+    font-size: 16px;
+}
+.card-text{
+    font-size: 14px;
+}
+/*cards endt*/
+.img{
+    border-radius: 50%;
+}
+.contact{
+    margin: 50px 30%;
+    width:50%;
+   position: relative;
+}
+.fab{
+    cursor: pointer;
+}
+.fab:hover{
+    color:coral;
+}
