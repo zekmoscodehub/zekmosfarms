@@ -330,22 +330,22 @@ Mission: The mission ofZekmos Frams is to provide customers with healthy, high-q
     </div>
   </div>
 </div>
-<form action="https://formsubmit.co/2d6395773593f79b94795fb6163f71d0" method="POST" class="contact" id="contact"><H1>Contact Us</H1>
+<form action="send-email.php" method="POST" class="contact" id="contact"><H1>Contact Us</H1>
 <form action="post" class="contact">
-    <input type="text" id="typeText" class="form-control" required />
+    <input type="text" id="typeText" name="name"class="form-control" required />
     <label class="form-label" for="typeText" name="name">Enter Name</label>
   </div>
 <div class="form-outline">
   <input type="email" id="typeEmail" class="form-control" name="email"required />
-  <label class="form-label" for="typeEmail">Email</label>
+  <label class="form-label" name="email" for="typeEmail">Email</label>
 </div><br>
 <div class="form-outline">
-  <input type="tel" id="typePhone" class="form-control"name="phone number"required />
-  <label class="form-label" for="typePhone">Phone number</label>
+  <input type="tel:+" id="typePhone" class="form-control"name="phone"required />
+  <label class="form-label" for="phone">Phone number</label>
 </div><br>
 <div class="form-outline">
   <textarea class="form-control" name="message" id="textAreaExample" rows="4"required ></textarea>
-  <label class="form-label" for="textAreaExample">Message</label>
+  <label class="form-label" for="message">Message</label>
 </div><br>
 <button type="submit" class="btn btn-primary">Send</button>
 
