@@ -73,8 +73,18 @@ html{
     margin-top: -18%;
 
 }
+.carousel-item{
+    margin-top: 8rem;
+    margin-left: 3rem;
+}
 .carousel-item p{
     color:rgb(135, 216, 135);
+    margin-left: 10rem;
+    margin-top: 5rem;
+}
+a .btn .btn2{
+    padding: 20rem;
+    
 }
 /*Home body end*/
 /*cards start*/
