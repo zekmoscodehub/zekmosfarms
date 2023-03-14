@@ -25,12 +25,12 @@ html{
 }
 .second-title{
     font-size: 5em;
-    color:rgb(245, 153, 119);
+    color:rgb(199, 227, 243);
 }
 .thired-title{
     font-size: 3em;
     margin-top:5%;
-    color:coral;
+    color:rgb(187, 228, 245);
 }
 /*titles end*/
 
@@ -41,6 +41,7 @@ html{
     margin-left:40%;
     margin-top: 6%;
     margin-bottom: 10%;
+    padding: 30px;
     
 }
 .social{
