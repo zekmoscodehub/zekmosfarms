@@ -1,5 +1,6 @@
 const form = document.querySelector('form');
-
+document.querySelectorAll('.form-outline').forEach((formOutline) => {
+  new mdb.Input(formOutline).init();
 //attach an event listener to the form submit event
 form.addEventListener('submit', (event) => {
   //prevent the default form submission
@@ -27,7 +28,7 @@ form.addEventListener('submit', (event) => {
   form.reset();
 });
 
-
+  });
 
 
   //get the form element
