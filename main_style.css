@@ -6,7 +6,7 @@
 }
 html{
     font-size: 10px;
-    scroll-behavior:smooth;
+    scroll-behavior: smooth;
 }
 /*index page start*/
 .index{
@@ -33,7 +33,7 @@ html{
     color:rgb(187, 228, 245);
 }
 .moto{
-    color:rgb(245, 203, 224)
+    color:#fff;
 }
 /*titles end*/
 
@@ -47,8 +47,11 @@ html{
     padding: 30px;
     
 }
+.bars{
+    width: 20px;
+}
 .social{
-    font-size: 16px;
+    font-size:10px;
     color:gray;
 }
 .fa-arrow-right{
