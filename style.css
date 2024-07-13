@@ -1,0 +1,52 @@
+/* Custom styles for Alphabet Game */
+
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    display:flex;
+}
+.main {
+    /* margin-top: 50px; */
+    margin:100px auto;
+    border: 1px solid red;
+    padding: 20px 20px;
+    border-radius: 8px;
+    background-color: #FFEBEE;
+}
+.container {
+    margin-top: 50px;
+}
+
+#question {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#options {
+    text-align: center;
+}
+
+.option {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.option:hover {
+    background-color: #f0f0f0;
+}
+
+#result {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#level-button,
+#minigame-button {
+    margin-top: 20px;
+}
