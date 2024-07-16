@@ -5,44 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <link rel="icon" href="hen.jpg" type="image" />
-    <title>Zekmos Hatchery and Farms</title> 
-    <!-- MDB icon -->
-   
+    <title>Zekmos Hatchery and Farms</title>
     <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <!-- Google Fonts Roboto -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-    />
-    <!--Style sheet-->
-    <link rel="stylesheet" href="main_style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/main_style.css" />
     <!-- MDB -->
     <link rel="stylesheet" href="css/mdb.min.css" />
+    <style>
+      body, html {
+        height: 100%;
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background: url('https://tracker.metricool.com/c3po.jpg?hash=1a9a0238939654d04fe4bf7a5677c9fe') no-repeat center center fixed;
+        background-size: cover;
+        font-family: sans-serif;
+      }
+      .top{
+        max-width: 600px;
+        justify-content: center;
+        text-align: center;
+        margin:2px auto;
+        margin-bottom: 12px;
+      }
+      .logo{
+        border-radius:50%;
+        max-width: 120px;
+        margin-right:50px;
+      }
+      .logo1{
+        width: 120px;
+      }
+      .index {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin-top: -100px;
+      }
+span{
+  color:coral;
+}
+      .glass {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        text-align: center;
+        color: white;
+      }
+      h1{
+        color: #307df1;
+      }
+      .glass h1, .glass h2 {
+        margin-bottom: 20px;
+      }
+h2{
+  color:green;
+}
+      .glass .btn {
+        font-size: 1.5rem;
+        border-radius: 12px;
+        margin: 10px;
+        padding: 15px 30px;
+      }
+      
+      .glass .btn1 {
+        display: block;
+        margin: 10px auto;
+      }
+    </style>
   </head>
   <body>
-      <!-- Background image -->
-     <div class="index">    
-          <div class="d-flex justify-content-center align-items-center h-100">
-            <div class="text-white ">
-              <h1 class="mb-3 text-center front-title">Zekmos Hatchery and Farms</h1>
-              <!-- <h2 class="mb-6 text-center second-title">Looking to start your guinea fowl farm?<br>You are in the right place</h2> -->
-              <h2 class="mb-6 text-center thired-title text-info"> <span class="moto">Hatch your dreams with us, Your trusted hatching partner</span></h2>
-            <div><a class="btn btn-primary btn-lg btn1" style="font-size:2rem; border-radius: 12px;padding:10px;" href="home.html" role="button">Go to Farms</a> </div>   
-              <div><a class="btn btn-primary btn-lg btn1" style="text-align:center; margin:12px 60px;font-size:2rem;font-family:sans serif; border-radius:12px;" href="hatchapp.great-site.net" role="button">Go to Hatchery</a> </div>
-            </div>
-          </div>
-          <img src="https://tracker.metricool.com/c3po.jpg?hash=1a9a0238939654d04fe4bf7a5677c9fe" alt="tracker"/>
-      <!-- Background image -->
-    </div>  
+    <div class="top"><img src="logo_icon.png" alt="" class="logo "> <img src="logo1.png" alt="" class="log logo1"> </div>
+    <div class="index">
+      
+      <div class="glass">
+        <h1 class="mb-3">Zekmos Hatchery and Farms</h1>
+        <h2 class="mb-6 text-success"><i>Your trusted hatching partner, <span><br>Hatch your dreams with us</i></span></h2>
+        <a class="btn btn-success btn-lg btn1 " href="home.html" role="button">Go to Farms</a>
+        <a class="btn btn-secondary btn-lg btn1" href="https://hatchapp.great-site.net" role="button">Go to Hatchery</a>
+      </div>
+    </div>
     <!-- MDB -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script src="index.php"></script>
     <!-- Custom scripts -->
-    <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"1a9a0238939654d04fe4bf7a5677c9fe"})});</script>
-    <script type="text/javascript"></script>
+    <script>
+      function loadScript(a) {
+        var b = document.getElementsByTagName("head")[0],
+          c = document.createElement("script");
+        c.type = "text/javascript";
+        c.src = "https://tracker.metricool.com/resources/be.js";
+        c.onreadystatechange = a;
+        c.onload = a;
+        b.appendChild(c);
+      }
+      loadScript(function () {
+        beTracker.t({ hash: "1a9a0238939654d04fe4bf7a5677c9fe" });
+      });
+    </script>
   </body>
 </html>
