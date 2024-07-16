@@ -1,288 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <link rel="icon" href="hen.jpg" type="image" />
-    <title>Zekmos Hatchery and Farms</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <!-- Google Fonts Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
-    <!-- MDB -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" />
-    <!-- Custom Styles -->
-    <style>
-      body, html {
-        height: 100%;
-        margin: 0;
-        font-family: 'Roboto', sans-serif;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <link rel="icon" href="hen.jpg" type="image/jpg" />
+  <title>Zekmos Hatchery and Farms</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" />
+  <!-- Custom Styles -->
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
 
-      .bg-image {
-        background: url('https://tracker.metricool.com/c3po.jpg?hash=1a9a0238939654d04fe4bf7a5677c9fe') no-repeat center center fixed;
-        background-size: cover;
-        height: 250px;
-        position: relative;
-      }
+    .bg-image {
+      background: url('https://tracker.metricool.com/c3po.jpg?hash=1a9a0238939654d04fe4bf7a5677c9fe') no-repeat center center fixed;
+      background-size: cover;
+      height: 250px;
+      position: relative;
+    }
 
-      .navbar {
-        background-color: rgba(255, 255, 255, 0.9);
-      }
+    .navbar {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
 
-      .navbar-brand img {
-        height: 25px;
-      }
+    .navbar-brand img {
+      height: 25px;
+    }
 
-      .social-icons a {
-        color: #333;
-        margin: 0 5px;
-        transition: color 0.3s;
-      }
+    .social-icons a {
+      color: #333;
+      margin: 0 5px;
+      transition: color 0.3s;
+    }
 
-      .social-icons a:hover {
-        color: #007bff;
-      }
+    .social-icons a:hover {
+      color: #007bff;
+    }
 
-      .glass {
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 16px;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        text-align: center;
-        color: white;
-      }
+    .glass {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      text-align: center;
+      color: white;
+    }
 
-      .glass h1, .glass h2 {
-        margin-bottom: 20px;
-      }
+    .glass h1, .glass h2 {
+      margin-bottom: 20px;
+    }
 
-      .glass .btn {
-        font-size: 1.5rem;
-        border-radius: 12px;
-        margin: 10px;
-        padding: 15px 30px;
-      }
+    .glass .btn {
+      font-size: 1.5rem;
+      border-radius: 12px;
+      margin: 10px;
+      padding: 15px 30px;
+    }
 
-      .glass .btn1 {
-        display: block;
-        margin: 10px auto;
-      }
+    .glass .btn1 {
+      display: block;
+      margin: 10px auto;
+    }
 
+    .card {
+      margin: 20px 0;
+    }
+
+    .card-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .form-outline {
+      margin-bottom: 20px;
+    }
+
+    .contact {
+      padding: 50px;
+    }
+
+    .title h1 {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    footer {
+      padding: 40px 0;
+      background-color: #333;
+      color: white;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .social {
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
       .carousel-item img {
-        border-radius: 40%;
-      }
-
-      .card {
-        margin: 20px 0;
-      }
-
-      .card-group {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        height: 150px;
       }
 
       .card img {
-        height: 200px;
-        object-fit: cover;
+        height: 150px;
       }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="p-5 text-center bg-image">
+    </div>
 
-      .form-outline {
-        margin-bottom: 20px;
-      }
-
-      .contact {
-        padding: 50px;
-      }
-
-      .title h1 {
-        text-align: center;
-        margin-top: 40px;
-      }
-
-      footer {
-        padding: 40px 0;
-        background-color: #333;
-        color: white;
-      }
-
-      footer a {
-        color: white;
-        text-decoration: none;
-      }
-
-      footer a:hover {
-        text-decoration: underline;
-      }
-
-      .social {
-        font-weight: bold;
-      }
-
-      @media (max-width: 768px) {
-        .carousel-item img {
-          height: 150px;
-        }
-
-        .card img {
-          height: 150px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="p-5 text-center bg-image">
-      </div>
-
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="logo_icon.png" alt="Logo" loading="lazy" />
-          </a>
-          <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <img src="bars.png" class="bars" alt="">
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" href="#home">HOME</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">ABOUT US</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#services">SERVICES</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">CONTACT US</a>
-              </li>
-            </ul>
-            <div class="d-flex align-items-center">
-              <span class="social me-3">Follow us</span>
-              <div class="social-icons">
-                <a href="#!" class="fab fa-youtube" title="YouTube"></a>
-                <a href="#!" class="fab fa-linkedin-in" title="LinkedIn"></a>
-                <a href="#!" class="fab fa-facebook-f" title="Facebook"></a>
-                <a href="#!" class="fab fa-instagram" title="Instagram"></a>
-                <a href="#!" class="fab fa-twitter" title="Twitter"></a>
-              </div>
-              <div class="dropdown ms-3">
-                <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                  <i class="fas fa-bell"></i>
-                  <span class="badge rounded-pill badge-notification bg-danger">3</span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item disabled" href="#">News updates</a></li>
-                  <li><a class="dropdown-item disabled" href="#">Quick Tips</a></li>
-                  <li><a class="dropdown-item disabled" href="#">Farm diary</a></li>
-                </ul>
-              </div>
-              <div class="dropdown ms-3">
-                <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                  <img src="logo_icon.png" class="rounded-circle" height="25" alt="Profile Picture" loading="lazy" />
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
-                  <li><a class="dropdown-item disabled" href="#">Member Area</a></li>
-                  <li><a class="dropdown-item disabled" href="#">Join</a></li>
-                  <li><a class="dropdown-item disabled" href="#">Login</a></li>
-                </ul>
-              </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="logo_icon.png" alt="Logo" loading="lazy" />
+        </a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <img src="bars.png" class="bars" alt="">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">ABOUT US</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">SERVICES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">CONTACT US</a>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center">
+            <span class="social me-3">Follow us</span>
+            <div class="social-icons">
+              <a href="#!" class="fab fa-youtube" title="YouTube"></a>
+              <a href="#!" class="fab fa-linkedin-in" title="LinkedIn"></a>
+              <a href="#!" class="fab fa-facebook-f" title="Facebook"></a>
+              <a href="#!" class="fab fa-instagram" title="Instagram"></a>
+              <a href="#!" class="fab fa-twitter" title="Twitter"></a>
+            </div>
+            <div class="dropdown ms-3">
+              <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-bell"></i>
+                <span class="badge rounded-pill badge-notification bg-danger">3</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item disabled" href="#">News updates</a></li>
+                <li><a class="dropdown-item disabled" href="#">Quick Tips</a></li>
+                <li><a class="dropdown-item disabled" href="#">Farm diary</a></li>
+              </ul>
+            </div>
+            <div class="dropdown ms-3">
+              <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                <img src="logo_icon.png" class="rounded-circle" height="25" alt="Profile Picture" loading="lazy" />
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+                <li><a class="dropdown-item disabled" href="#">Member Area</a></li>
+                <li><a class="dropdown-item disabled" href="#">Join</a></li>
+                <li><a class="dropdown-item disabled" href="#">Login</a></li>
+              </ul>
             </div>
           </div>
         </div>
-      </nav>
-      <!-- Navbar -->
-    </header>
+      </div>
+    </nav>
+    <!-- Navbar -->
+  </header>
 
-    <!-- Carousel wrapper -->
-    <div id="carouselMaterialStyle" class="carousel slide carousel-fade" data-mdb-ride="carousel">
-      <!-- Indicators -->
-    
-
-      <!-- Inner -->
-      <div class="carousel-inner rounded-5 shadow-4-strong" id="home">
-        <!-- Single item -->
-        <div class="carousel-item active">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJdgF7N5SSJVW8jG3HV2l7iBtc75K84JSNA2S8OWzFLdaHhtceclBhip_tRwc2xg-8QEA&usqp=CAU" class="d-block w-50"
-            alt="hen" />
-          <div class="carousel-caption d-none d-md-block">
-           
-          </div>
+  <!-- Carousel wrapper -->
+  <div id="carouselMaterialStyle" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="0" class="active"></li>
+      <li data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="1"></li>
+      <li data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="2"></li>
+    </ol>
+    <!-- Inner -->
+    <div class="carousel-inner rounded-5 shadow-4-strong" id="home">
+      <!-- Single item -->
+      <div class="carousel-item active">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJdgF7N5SSJVW8jG3HV2l7iBtc75K84JSNA2S8OWzFLdaHhtceclBhip_tRwc2xg-8QEA&usqp=CAU" class="d-block w-50"
+          alt="hen" />
+        <div class="carousel-caption d-none d-md-block">
+          <!-- Caption content here if needed -->
         </div>
+      </div>
 
-        <!-- Single item -->
-        <div class="carousel-item">
-          <img src="hen.jpg" class="d-block w-50 " alt="Canyon at Night" />
-          <div class="carousel-caption d-none d-md-block">
-          </div>
+      <!-- Single item -->
+      <div class="carousel-item">
+        <img src="hen.jpg" class="d-block w-50 " alt="Canyon at Night" />
+        <div class="carousel-caption d-none d-md-block">
+          <!-- Caption content here if needed -->
         </div>
+      </div>
 
-        <!-- Single item -->
-        <div class="carousel-item">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWXiD01P_8-7_vVjIl20tFNrhdAPw2DNBn5Ku5EqLXTHex9nSHJ7scN55suoMD1Hzk1l8&usqp=CAU" class="d-block w-100" alt="Cliff Above a Stormy Sea" />
-          <div class="carousel-caption d-none d-md-block pic1">
-             </div>
+      <!-- Single item -->
+      <div class="carousel-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWXiD01P_8-7_vVjIl20tFNrhdAPw2DNBn5Ku5EqLXTHex9nSHJ7scN55suoMDUH4i8jM&usqp=CAU" class="d-block w-50" alt="Technology"
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <!-- Caption content here if needed -->
         </div>
-      
-      <!-- Inner -->
+      </div>
 
-      <!-- Controls -->
-     
-    <!-- Carousel wrapper -->
+    </div>
 
-    <!-- About Section -->
-    <section class="glass" id="about">
-      <h1>Zekmos Hatchery and Farms</h1>
-      <h2>Our Mission</h2>
-      <p>To provide high-quality poultry products and services to our customers, ensuring the best farming experience with our advanced technology and expert care.</p>
-      <h2>Our Vision</h2>
-      <p>To be the leading poultry farm in the region, known for our commitment to quality, innovation, and sustainable farming practices.</p>
-      <h2>Core Values</h2>
-      <p>Integrity, Innovation, Customer Satisfaction, Sustainability, and Excellence.</p>
-    </section>
-    <!-- About Section -->
+    <!-- Inner -->
 
-    <!-- Services Section -->
-    <section class="container" id="services">
-      <h1 class="title">Our Services</h1>
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+    <!-- Controls -->
+  </div>
+  <!-- Carousel wrapper -->
+
+  <!-- About Us Section -->
+  <section class="glass" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <h1>About Us</h1>
+          <p>Zekmos Hatchery and Farms is dedicated to providing high-quality poultry products and services. We specialize in breeding and hatching various poultry breeds, ensuring top-notch health and genetic quality. Our mission is to support local farmers and businesses with reliable poultry solutions.</p>
+          <a href="#contact" class="btn btn-primary btn1">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Us Section -->
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <div class="title">
+        <h1>Our Services</h1>
+      </div>
       <div class="card-group">
-        <div class="card" style="width: 18rem;">
-          <img src="https://via.placeholder.com/200" class="card-img-top pic" alt="..." />
+        <div class="card">
+          <img src="chicken.jpg" class="card-img-top" alt="Chicken">
           <div class="card-body">
-            <h5 class="card-title">Commercial Hatcheries</h5>
-            <p class="card-text">State-of-the-art incubators to ensure the highest hatch rates for your poultry business.</p>
-            <a href="#" class="btn btn-primary">Learn More</a>
+            <h5 class="card-title">Poultry Breeding</h5>
+            <p class="card-text">Specializing in breeding of healthy poultry breeds.</p>
           </div>
         </div>
-        <div class="card" style="width: 18rem;">
-          <img src="https://via.placeholder.com/200" class="card-img-top pic" alt="..." />
+        <div class="card">
+          <img src="egg.jpg" class="card-img-top" alt="Egg">
           <div class="card-body">
-            <h5 class="card-title">Poultry Products</h5>
-            <p class="card-text">Quality poultry products including broilers, layers, and guinea fowls for your farm or table.</p>
-            <a href="#" class="btn btn-primary">Learn More</a>
+            <h5 class="card-title">Egg Production</h5>
+            <p class="card-text">Offering high-quality egg production services.</p>
           </div>
         </div>
-        <div class="card" style="width: 18rem;">
-          <img src="https://via.placeholder.com/200" class="card-img-top pic" alt="..." />
+        <div class="card">
+          <img src="feed.jpg" class="card-img-top" alt="Feed">
           <div class="card-body">
-            <h5 class="card-title">Farm Inputs</h5>
-            <p class="card-text">Feed, drugs, and other farm inputs to keep your livestock healthy and productive.</p>
-            <a href="#" class="btn btn-primary">Learn More</a>
+            <h5 class="card-title">Feed & Supplies</h5>
+            <p class="card-text">Supplying nutritious feed and poultry supplies.</p>
           </div>
         </div>
       </div>
-    </section>
-    <!-- Services Section -->
+    </div>
+  </section>
+  <!-- Services Section -->
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-      <h1 class="title">Contact Us</h1>
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Contact Us</h1>
       <form action="https://formspree.io/f/mgebznno"
       method="POST" class="contact" id="contact"><H3>Contact Us</H3>
       <div class="form-outline">
