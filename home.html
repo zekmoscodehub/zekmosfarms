@@ -52,6 +52,7 @@
    }
    .btn:hover {
       background-color: #0056b3;
+      color:#fff;
    }
    .interactive {
       margin-top: 20px;
@@ -185,6 +186,7 @@
    .bars:hover {
       padding: 2px;
    }
+
 </style>
   </head>
   <body>
@@ -216,7 +218,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="#contact">CONTACT US</a>
               </li>
-              <a href="https://hatchapp.great-site.net"class=" btn btn-secondary">Go to hachery</a>
+              <a href="https://hatchapp.great-site.net"class=" btn btn-secondary" style="margin:10px 30px;">Start hatching Today!</a>
             </ul>
             <div class="d-flex align-items-center">
               <span class="social me-3">Follow us</span>
@@ -630,28 +632,28 @@ Zekmos Hatchery and Farms vision is to be recognized as a leading provider of pr
 <button type="submit" class="btn btn-primary">Send</button>
 
 </form>    
-<div class="form-container">
-  <div class="section-title">Poultry Lockdown Calculator</div>
+<div class="form-container" style="justify-content: center; align-items: center; text-align: center; width: 300px; height: auto; margin: 10px auto;">
+  <div class="section-title" style="font-size: 1.5em; font-weight: bold; margin-bottom: 20px;">Egg Lockdown Calculator</div>
+  <div class="result" id="result" style="margin: 0px auto; color: green;margin-bottom:10px;padding:6px;"></div>
   <form id="poultryForm">
-      <div class="form-outline">
-          <label for="date">Select Date:</label>
-          <input type="date" id="date" name="date" required>
+      <div class="forma-outline" style="margin-bottom: 10px;">
+          <label for="date" style="display: block; margin-bottom: 5px;">Select Date:</label>
+          <input type="date" id="date" name="date" required style="width: 100%; padding: 5px;">
       </div>
-      <div class="form-outline">
-          <label for="poultryType">Select Poultry Type:</label>
-          <select id="poultryType" name="poultryType" required>
+      <div class="form-outline" style="margin-bottom: 10px;">
+          <label for="poultryType" style="display: block; margin-bottom: 5px;">Poultry Type:</label>
+          <select id="poultryType" name="poultryType" required style="width: 100%; padding: 5px;">
               <option value="">Select</option>
+              <option value="guineaFowl">Guinea Fowl</option>
               <option value="turkey">Turkey</option>
               <option value="duck">Duck</option>
-              <option value="guineaFowl">Guinea Fowl</option>
               <option value="fowl">Fowl</option>
           </select>
       </div>
-      <button type="button" class="btn" onclick="calculateLockdown()">Calculate Lockdown Date</button>
+      <button type="button" class="btn" onclick="calculateLockdown()" style="width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px;margin-bottom:20px;">Lockdown Date</button>
   </form>
-  <div class="result" id="result"></div>
+  
 </div>
-<br>
 
 <script>
   function calculateLockdown() {
@@ -660,7 +662,7 @@ Zekmos Hatchery and Farms vision is to be recognized as a leading provider of pr
       const resultDiv = document.getElementById('result');
 
       if (!dateInput || !poultryType) {
-          resultDiv.innerHTML = "Please select both date and poultry type.";
+          resultDiv.innerHTML = "Please select date and poultry type.";
           return;
       }
 
@@ -679,7 +681,7 @@ Zekmos Hatchery and Farms vision is to be recognized as a leading provider of pr
       const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
       const formattedLockdownDate = lockdownDate.toLocaleDateString(undefined, options);
 
-      resultDiv.innerHTML = `The lockdown date for your selected date is: <strong>${formattedLockdownDate}</strong>`;
+      resultDiv.innerHTML = `The lockdown date for the eggs is: <strong>${formattedLockdownDate}</strong>`;
   }
 </script>
 <footer class="bg-dark text-center text-white"id="contact">
