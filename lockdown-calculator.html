@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poultry Lockdown Calculator</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            max-width: 1200px;
+        }
+        .section-title {
+            font-size: 1.5em;
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+        .form-container {
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-outline {
+            margin-bottom: 20px;
+        }
+    
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="logo1.png" alt="Logo"class="logo" loading="lazy" />
+          </a>
+          <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <img src="menubar.png" class="bars" alt="">
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="#home">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">ABOUT US</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services">SERVICES</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">CONTACT US</a>
+              </li>
+              <a href="https://hatchapp.great-site.net"class=" btn btn-secondary">Go to hachery</a>
+            </ul>
+            <div class="d-flex align-items-center">
+              <span class="social me-3">Follow us</span>
+              <div class="social-icons">
+                <a href="https://YouTube.com/zekmosfarms" class="fab fa-youtube" title="YouTube"></a>
+                <a href="https://linkedin.com/zekmosfarms" class="fab fa-linkedin-in" title="LinkedIn"></a>
+                <a href="https://facebook.com/zekmosfarms" class="fab fa-facebook-f" title="Facebook"></a>
+                <a href="#!" class="fab fa-instagram" title="Instagram"></a>
+                <a href="#!" class="fab fa-twitter" title="Twitter"></a>
+              </div>
+              <div class="dropdown ms-3">
+                <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-bell"></i>
+                  <span class="badge rounded-pill badge-notification bg-danger">3</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="https://hatchapp.great-site.net">News updates</a></li>
+                  <li><a class="dropdown-item" href="https://hatchapp.great-site.net">Quick Tips</a></li>
+                  <li><a class="dropdown-item" href="https://hatchapp.great-site.net">Farm diary</a></li>
+                </ul>
+              </div>
+              <div class="dropdown ms-3">
+                <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                  <img src="logo_icon.png" class="rounded-circle" height="25" alt="Profile Picture" loading="lazy" />
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+                  <li><a class="dropdown-item " href="https://hatchapp.great-site.net/login.php">Member Area</a></li>
+                  <li><a class="dropdown-item " href="#">Join</a></li>
+                  <li><a class="dropdown-item" href="https://hatchapp.great-site.net/login.php">Login</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar -->
+    <div class="form-container">
+        <div class="section-title">Poultry Lockdown Calculator</div>
+        <form id="poultryForm">
+            <div class="form-outline">
+                <label for="date">Select Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-outline">
+                <label for="poultryType">Select Poultry Type:</label>
+                <select id="poultryType" name="poultryType" required>
+                    <option value="">Select</option>
+                    <option value="turkey">Turkey</option>
+                    <option value="duck">Duck</option>
+                    <option value="guineaFowl">Guinea Fowl</option>
+                    <option value="fowl">Fowl</option>
+                </select>
+            </div>
+            <button type="button" class="btn" onclick="calculateLockdown()">Calculate Lockdown Date</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateLockdown() {
+            const dateInput = document.getElementById('date').value;
+            const poultryType = document.getElementById('poultryType').value;
+            const resultDiv = document.getElementById('result');
+
+            if (!dateInput || !poultryType) {
+                resultDiv.innerHTML = "Please select both date and poultry type.";
+                return;
+            }
+
+            const date = new Date(dateInput);
+            let daysToAdd = 0;
+
+            if (poultryType === 'fowl') {
+                daysToAdd = 18;
+            } else {
+                daysToAdd = 25;
+            }
+
+            const lockdownDate = new Date(date);
+            lockdownDate.setDate(lockdownDate.getDate() + daysToAdd);
+
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedLockdownDate = lockdownDate.toLocaleDateString(undefined, options);
+
+            resultDiv.innerHTML = `The lockdown date for your selected date is: <strong>${formattedLockdownDate}</strong>`;
+        }
+    </script>
+</body>
+</html>
