@@ -311,15 +311,77 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-          <p class="card-text"><span> Zekmos Hatchery and Farms</span> A non-Profit volunteer group of farmers in poultary breeding located in Ghana, precisely Tamale. We are specialize in breeding and hatching high-quality, healthy chicks and poultry from a variety of breeds for backyard backyard farmers.
+          <p class="card-text"><span> Zekmos Hatchery and Farms</span> A profit-making group of farmers in poultary breeding most expercially Guinea fowl rearers located in Ghana, precisely Tamale. We are specialize in breeding and hatching high-quality, healthy chicks and poultry from a variety of breeds for both commercial and backyard farmers.
 
-            We use state-of-the-art incubators and brooders to ensure optimal conditions for hatching and early chick development. Our eggs are carefully selected and stored under optimal conditions prior to incubation, and we monitor temperature, humidity, and other environmental factors closely throughout the incubation process. Once hatched, chicks are kept in a temperature-controlled brooder until they are ready to be sold.
+            We use sofiticate computer controlled incubators and perfect brooders to ensure optimal conditions for hatching and early chick development. Our eggs are carefully selected and stored under optimal conditions prior to incubation, and we monitor temperature, humidity,CO<sub>2</sub> and other environmental factors closely throughout the incubation process. Once hatched, chicks are kept in a temperature-controlled brooder until they are ready to be sold.
             
             Breeds We offer a variety of chicken and turkey breeds, including:
             
             Broilers Layers Heritage breeds Dual-purpose breeds Turkeys
 </p> 
-        <a href="#" class="btn btn-primary">Continue reading</a><br>
+        
+          
+          <!--  bustton to order starts -->
+          <div style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height:10vh;
+          background-color: #f7f7f7;
+          margin: 0;
+          padding: 0;
+          ">
+          <button 
+              onclick="window.location.href='order.html'"
+              style="
+                  background-color: #3498db;
+                  color: white;
+                  padding: 15px 30px;
+                  font-size: 18px;
+                  border: none;
+                  border-radius: 5px;
+                  cursor: pointer;
+                  transition: background-color 0.3s ease, transform 0.3s ease;
+                  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                  position: relative;
+                  overflow: hidden;
+              "
+              onmouseover="this.style.backgroundColor='#2980b9'; this.style.transform='scale(1.05)';"
+              onmouseout="this.style.backgroundColor='#3498db'; this.style.transform='scale(1)';"
+          >
+              Order Guinea Keets Now
+              <span style="
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  left: 50%;
+                  width:100%;
+                  height: 100%;
+                  background: rgba(255, 255, 255, 0.15);
+                  transition: all 0.5s ease;
+                  transform: translate(-50%, -50%) rotate(45deg);
+                  opacity: 0;
+                  z-index: 0;
+              "></span>
+          </button>
+          </div>
+          
+          <script>
+          // Add a ripple effect to the button when clicked
+          const button = document.querySelector('button');
+          button.addEventListener('click', function(e) {
+              const ripple = this.querySelector('span');
+              ripple.style.width = ripple.style.height = Math.max(this.offsetWidth, this.offsetHeight) + 'px';
+              ripple.style.left = e.clientX - this.offsetLeft - ripple.offsetWidth / 2 + 'px';
+              ripple.style.top = e.clientY - this.offsetTop - ripple.offsetHeight / 2 + 'px';
+              ripple.style.opacity = '1';
+              setTimeout(() => ripple.style.opacity = '0', 500);
+          });
+          </script>
+          
+
+            <!-- button ends -->
+        <br>
         <img src="icon_chick.png" alt="">
       </div>
     </div>
