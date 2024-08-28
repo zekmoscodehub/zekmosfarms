@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our selection of poultry products and hatching services at Zekmos Hatchery and Farms.">
+    <meta name="keywords" content="shop, poultry products, hatching services, day-old chicks, guinea keets, incubators, farm supplies">
+    <meta name="author" content="Zekmos Hatchery and Farms">
+    <meta property="og:title" content="Shop - Zekmos Hatchery and Farms">
+    <meta property="og:description" content="Explore our wide range of poultry products and services.">
+    <meta property="og:image" content="images/shop-preview.jpg">
+    <meta property="og:url" content="https://yourusername.github.io/repository-name/shop.html">
+    <meta property="og:type" content="website">
+    <title>Shop - Zekmos Hatchery and Farms</title>
+    <link rel="stylesheet" href="css/inde.css">
+    <style>
+        /* Reset some basic elements */
+        body, h1, h2, h3, p, ul, li, img {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            font-size: small;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            margin: 0px;
+        }
+
+        .logo img {
+            width: 120px;
+            margin: 20px 40px;
+            border-radius:50%;
+            display: flex;
+            text-align: center;
+        }
+
+        nav {
+            float: right;
+            margin-right: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        main {
+            padding: 40px 20px 20px; /* Adjust padding to account for the fixed header */
+        }
+
+        .container {
+            max-width: 100vw;
+            margin: 0 auto;
+            /* height: 100vh; */
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .product-list .product-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-list .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-list .product-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-list .product-item .details {
+            padding: 15px;
+        }
+
+        .product-list .product-item .details h3 {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-list .product-item .details p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .product-list .product-item .details .price {
+            font-size: 14px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Zekmos Hatchery and Farms">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="home.html#contactFormContainer">Contact</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="product-list" id="product-list">
+                <!-- Products will be loaded here dynamically -->
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Zekmos Hatchery and Farms. All rights reserved.</p>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

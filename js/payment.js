@@ -1,5 +1,3 @@
-
-
 // Get references to form and necessary input fields
 const paymentForm = document.getElementById('paymentForm');
 const emailAddress = document.getElementById('email-address');
@@ -8,7 +6,8 @@ const quantitySelect = document.getElementById('quantity');
 const amountInput = document.getElementById('amount');
 const firstName = document.getElementById('first-name');
 const lastName = document.getElementById('last-name');
-const businessName = document.getElementById('b_name');
+const businessName = document.getElementById('b-name');
+
 
 // Event listener for form submission
 paymentForm.addEventListener("submit", payWithPaystack);
@@ -23,7 +22,7 @@ function payWithPaystack(e) {
     }
 
     // Extract numerical value from amount input
-    const amountValue = parseFloat(amountInput.value.replace(/[^0-9.-]+/g,""));
+    const amountValue = parseFloat(amountInput.value.replace('GHS ', '').replace(/,/g, ''));
     
     // Validate amount
     if (isNaN(amountValue) || amountValue <= 0) {
@@ -33,11 +32,11 @@ function payWithPaystack(e) {
 
     // Initialize Paystack payment
     let handler = PaystackPop.setup({
-        key: 'pk_test_37a0998b62f8420168b6e1fe28bb8d2827ddbde7', // Replace with your public key
+        key: 'YOUR_PUBLIC_KEY', // Replace with your public key
         email: emailAddress.value,
         amount: amountValue * 100, // Convert to kobo
         currency: 'GHS',
-        ref: 'ZHF_'+Math.floor((Math.random() * 1000000000) + 1), // Unique reference
+        ref: 'ZHF_' + Math.floor((Math.random() * 1000000000) + 1), // Unique reference
         metadata: {
             custom_fields: [
                 {
@@ -67,11 +66,11 @@ function payWithPaystack(e) {
                 }
             ]
         },
-        onClose: function(){
+        onClose: function() {
             alert('Payment window closed.');
         },
-        callback: function(response){
-            let message = 'Payment successful!  With your order reference No : ' + response.reference;
+        callback: function(response) {
+            let message = 'Payment successful! With your order reference No: ' + response.reference;
             alert(message);
             // You can redirect or perform other actions here
         }
