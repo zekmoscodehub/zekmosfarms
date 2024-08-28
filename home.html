@@ -8,12 +8,12 @@
     <meta name="keywords" content="Poultry Hatchery Ghana, Day-old Chicks for Sale, Guinea Keets Supplier, Commercial Hatchery Services, Poultry Breeding Farm, Agricultural Inputs Ghana, Farm Products Supplier, Poultry Feed and Drugs, Incubators for Sale Ghana, Poultry Farming Ghana, Zekmos Hatchery and Farms, Poultry Consultation Services, Brooding Equipment Ghana, Farm Inputs Supplier Ghana, Poultry Health Products, Egg Incubation Services, Guinea Fowl Farming, Agribusiness Ghana, Poultry Equipment Supplier,Hatcher Tamale, Northern Ghana, Agric, farm tamale, UDS Nyankpala,campus,vet, poulty,drugs, eggs, guinea, fowls, chicks,keet, brooding,breeding,candeling,  Farmers Market Ghana,Poultry Hatchery Ghana, Day-old Chicks for Sale, Guinea Keets Supplier, Commercial Hatchery Services, Poultry Breeding Farm, Agricultural Inputs Ghana, Farm Products Supplier, Poultry Feed and Drugs, Incubators for Sale Ghana, Poultry Farming Ghana, Zekmos Hatchery and Farms, Poultry Consultation Services, Brooding Equipment Ghana, Farm Inputs Supplier Ghana, Poultry Health Products, Egg Incubation Services, Guinea Fowl Farming, Agribusiness Ghana, Poultry Equipment Supplier, Farmers Market Ghana,poultry, hatching services, day-old chicks, guinea keets, incubators, farm supplies, Ghana">
     <meta name="author" content="Zekmos Hatchery and Farms">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"> -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /> -->
     <!-- Google Fonts Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
-    <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" /> -->
+    <!-- MDB-->
+    <!-- <link rel="stylesheet" href="css/mdb.min.css" /> -->
     <title>Zekmos Hatchery and Farms</title>
     <style>
         body {
@@ -58,7 +58,82 @@
         .logo img {
             height: 50px;
         }
+/* Form Styling */
+.contact {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-width: 600px;
+        margin: 0 auto;
+    }
 
+    .contact h1 {
+        color: coral;
+        margin-bottom: 20px;
+    }
+
+    .contact .form-outline {
+        margin-bottom: 15px;
+    }
+
+    .contact input,
+    .contact textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        background-color: #fff;
+        color: #383737;
+    }
+
+    .contact input::placeholder,
+    .contact textarea::placeholder {
+        color: #888;
+    }
+
+    .contact input:focus,
+    .contact textarea:focus {
+        outline: none;
+        border-color: #28a745;
+        box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+    }
+
+    .contact button {
+        background-color: #28a745;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.3s;
+    }
+
+    .contact button:hover {
+        background-color: #218838;
+    }
+
+    /* Adjusting for the overall page style */
+    body {
+        background-color: #bdcdeb;
+        color: #383737;
+        text-align: center;
+    }
+
+    /* Ensuring responsiveness */
+    @media (max-width: 768px) {
+        .contact {
+            width: 90%;
+            padding: 15px;
+        }
+
+        .contact h1 {
+            font-size: 24px;
+        }
+    }
         nav ul {
             list-style: none;
             margin: 0;
@@ -133,7 +208,7 @@ ul .featured-items {
             justify-content: center;
             position: relative;
             margin-left: 20px;
-            overflow: hidden;
+            /* overflow: hidden; */
         }
 
         .intro h1 {
@@ -546,32 +621,38 @@ ul .featured-items {
     </div>
     <div class="container my-5">
       <!-- Button to Show Contact Form -->
-      <button class="btn btn-secondary" id="showContactFormBtn"> Contact Us</button>
+      <button class="btn btn-secondary" id="showContactFormBtn">Contact Us</button>
   
       <!-- Contact Form (Initially Hidden) -->
-      <div id="contactFormContainer" style="display: none; margin-top: 20px;background:none">
+      <div id="contactFormContainer" style="display: none; margin-top: 20px;">
           <form action="https://formspree.io/f/mgebznno" method="POST" class="contact" id="contact">
-              <h1 style="color: coral;">Contact Us</h1>
+              <h1>Contact Us</h1>
               <div class="form-outline mb-4 w-50">
                   <input type="text" id="typeText" name="name" class="form-control" required placeholder="Enter Name"/>
-                  <!-- <label class="form-label" for="typeText">Enter Name</label> -->
               </div>
               <div class="form-outline mb-4 w-50">
                   <input type="email" id="typeEmail" class="form-control" name="email" required placeholder="Email"/>
-                  <!-- <label class="form-label" for="typeEmail">Email</label> -->
               </div>
               <div class="form-outline mb-4 w-50">
                   <input type="tel" id="typePhone" class="form-control" name="contact" required placeholder="Enter Phone"/>
-                  <!-- <label class="form-label" for="typePhone">Phone number</label> -->
               </div>
               <div class="form-outline mb-4 w-50">
                   <textarea class="form-control" name="message" id="textAreaExample" rows="4" required placeholder="Message Area"></textarea>
-                  <!-- <label class="form-label" for="textAreaExample">Message</label> -->
               </div>
               <button type="submit" class="btn btn-primary">Send</button>
           </form>
       </div>
   </div>
+  
+  <!-- <script>
+      // JavaScript to toggle the visibility of the contact form
+      document.getElementById('showContactFormBtn').addEventListener('click', function() {
+          var contactFormContainer = document.getElementById('contactFormContainer');
+          contactFormContainer.style.display = (contactFormContainer.style.display === "none") ? "block" : "none";
+      });
+  </script> -->
+  
+  
     <div class="content">
         <a href="#users-comments">What our clients say about Us</a>
 
@@ -1019,17 +1100,18 @@ function clearForm() {
         beTracker.t({ hash: "1a9a0238939654d04fe4bf7a5677c9fe" });
       });
     </script>
-    <script>
-        document.getElementById('showContactFormBtn').addEventListener('click', function() {
-        const contactFormContainer = document.getElementById('contactFormContainer');
-        if (contactFormContainer.style.display === 'none') {
-        contactFormContainer.style.display = 'block';
-        } else {
-        contactFormContainer.style.display = 'none';
-        }
-        });
-        </script>
-          </script>
+   <script>
+      // JavaScript to toggle the visibility of the contact form
+      document.getElementById('showContactFormBtn').addEventListener('click', function() {
+          var contactFormContainer = document.getElementById('contactFormContainer');
+          if (contactFormContainer.style.display === "none") {
+              contactFormContainer.style.display = "block";
+          } else {
+              contactFormContainer.style.display = "none";
+          }
+      });
+  </script>
+       
           <script>document.getElementById('showLockdownCalculatorBtn').addEventListener('click', function() {
           const lockdownCalculatorContainer = document.getElementById('lockdownCalculatorContainer');
           if (lockdownCalculatorContainer.style.display === 'none') {
