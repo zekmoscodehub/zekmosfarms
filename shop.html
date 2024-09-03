@@ -21,6 +21,8 @@
             box-sizing: border-box;
             font-family: sans-serif;
             font-size: small;
+            justify-content: center;
+            text-decoration: none;
         }
 
         body {
@@ -28,26 +30,27 @@
             line-height: 1.6;
             color: #333;
             background-color: #f9f9f9;
+            height: 100vh;
         }
 
         header {
             background-color: #fff;
             border-bottom: 1px solid #ddd;
             padding: 15px 0;
-            position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             display: flex;
             margin: 0px;
+            justify-content: space-around;
         }
 
         .logo img {
-            width: 120px;
-            margin: 20px 40px;
-            border-radius:50%;
-            display: flex;
+            width: 80px;
+            margin: 0px 40px;
+            border-radius: 50%;
+            display: inline;
             text-align: center;
         }
 
@@ -79,71 +82,173 @@
         }
 
         main {
-            padding: 40px 20px 20px; /* Adjust padding to account for the fixed header */
+            flex: 1;
+            padding: 20px 10px 20px;
         }
 
         .container {
             max-width: 100vw;
-            margin: 0 auto;
-            /* height: 100vh; */
+            margin: 20px 10px;
+            height: 100%;
+            margin-top: 0;
+            margin-bottom: 50px;
+        }
+
+        .category {
+            margin-bottom: 20px;
+        }
+
+        .category h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
         }
 
         .product-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 25px;
         }
 
-        .product-list .product-item {
+        .product-item {
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 5px;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
         }
 
-        .product-list .product-item:hover {
+        .product-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .product-list .product-item img {
+        .product-item img {
             width: 100%;
-            height: 200px;
+            height: 150px;
             object-fit: cover;
         }
 
-        .product-list .product-item .details {
+        .details {
             padding: 15px;
+            text-align: center;
         }
 
-        .product-list .product-item .details h3 {
-            font-size: 14px;
+        .details h3 {
+            font-size: 0.8rem;
             margin-bottom: 10px;
             color: #333;
         }
 
-        .product-list .product-item .details p {
+        .details p {
             margin-bottom: 15px;
             color: #666;
+            font-size: 0.6rem;
         }
 
-        .product-list .product-item .details .price {
-            font-size: 14px;
+        .details .price {
+            font-size: 0.7rem;
             color: #4CAF50;
             font-weight: bold;
         }
 
-        footer {
-            background-color: #333;
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 3px 10px;
+            border-radius: 3px;
             color: #fff;
+            font-size: 0.7rem;
+        }
+
+        .sold {
+            background-color: #FF0000;
+            font-weight: bold;
+        }
+
+        .in-stock {
+            background-color: #4CAF50;
+        }
+
+        .alert-message {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
             text-align: center;
-            padding: 15px 0;
+            border-radius: 5px;
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button styles */
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn[disabled] {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 15px;
+            height: 10px;
+            border: 3px solid #ccc;
+            border-top-color: #4CAF50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .cart-buttons {
+            display: flex;
+            justify-content: center;
             margin-top: 20px;
         }
 
-        footer p {
-            margin: 0;
+        .go-to-cart {
+            background-color: #f39c12;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .go-to-cart:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -167,6 +272,7 @@
             <section class="product-list" id="product-list">
                 <!-- Products will be loaded here dynamically -->
             </section>
+           
         </div>
     </main>
 

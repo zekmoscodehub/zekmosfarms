@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Order</title>
+    <style>
+      /* Logo Styling */
+      .logo {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+          background-color: #fff;
+      }
+
+      .logo img {
+             
+          max-width: 100%;
+          height: 100px;
+          max-height: 100px;
+          border-radius:50%;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 600px) {
+          .logo img {
+              max-height: 100px;
+          }
+      }
+  </style>
+</head>
+<body>
+   
+  <!-- Logo Section -->
+  <div class="logo">
+      <img src="logo.png" alt="Zekmos Hatchery and Farms Logo" class="logo1">
+  </div>
+
+    <form id="paymentForm">
+      <div class="top">
+        
+      <h4><span style="color: coral;"> Zekmos Hatchery and Farms</span><br><small><i style="color: green;"><a href="http://zekmosfarms.org" style="text-decoration: none;">We!</a> hatch your perfect dream farm. </i></small></h4>
+      
+    </div>
+      <h5><hr>Enter the fields below.</h5>
+      
+      <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email-address" required />
+      </div>
+      
+      <div class="form-group">
+          <label for="phone_number">Phone</label>
+          <input type="tel" id="mobile" required />
+      </div>
+      
+      <div class="form-group">
+          <label for="quantity">Select quantity of birds to order</label>
+          <select id="quantity" required>
+              <option value="50">50 Birds </option>
+              <option value="100">100 Birds </option>
+              <option value="150">150 Birds </option>
+              <option value="200">200 Birds </option>
+              <!-- <option value="250">250 Birds </option>
+              <option value="300">300 Birds </option>
+              <option value="350">350 Birds </option>
+              <option value="400">400 Birds </option>
+              <option value="450">450 Birds </option>
+              <option value="500">500 Birds </option>
+              <option value="550">550 Birds </option>
+              <option value="600">600 Birds </option>
+              <option value="650">650 Birds </option>
+              <option value="700">700 Birds </option>
+              <option value="750">750 Birds </option>
+              <option value="800">800 Birds </option>
+              <option value="850">850 Birds </option>
+              <option value="900">900 Birds </option>
+              <option value="950">950 Birds </option>
+              <option value="1000">1000 Birds</option> -->
+          </select>
+      </div>
+      
+      <div class="form-group">
+          <label for="amount">Total Amount (GHS)</label>
+          <input type="text" id="amount" readonly />
+      </div>
+      
+      <div class="form-group">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" required />
+      </div>
+      
+      <div class="form-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" required />
+      </div>
+      
+      <div class="form-group">
+          <label for="b-name">Business Name (if any)</label>
+          <input type="text" id="b_name" />
+      </div>
+      
+      <div class="form-submit">
+          <button type="submit" onclick="payWithPaystack()" style="cursor:not-allowed;">Order now</button>
+      </div>
+    </form>
+    
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="js/payment.js"></script>
+    <script>
+        const quantitySelect = document.getElementById('quantity');
+        const amountInput = document.getElementById('amount');
+
+        quantitySelect.addEventListener('change', function() {
+            const quantity = parseInt(quantitySelect.value);
+            const pricePerBird = 15; // GHS 15 per bird
+            const totalAmount = quantity * pricePerBird;
+            amountInput.value = `GHS ${totalAmount.toFixed(2)}`;
+        });
+    </script>
+
+
+
+</body>
+</html>

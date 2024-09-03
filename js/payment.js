@@ -32,7 +32,7 @@ function payWithPaystack(e) {
 
     // Initialize Paystack payment
     let handler = PaystackPop.setup({
-        key: 'YOUR_PUBLIC_KEY', // Replace with your public key
+        key: 'pk_test_37a0998b62f8420168b6e1fe28bb8d2827ddbde7', // Replace with your public key
         email: emailAddress.value,
         amount: amountValue * 100, // Convert to kobo
         currency: 'GHS',
@@ -82,7 +82,7 @@ function payWithPaystack(e) {
 // Calculate amount on quantity change
 quantitySelect.addEventListener('change', function() {
     const quantity = parseInt(quantitySelect.value);
-    const pricePerBird = 15; // GHS 15 per bird
+    const pricePerBird = 21; // GHS 15 per bird
     const totalAmount = quantity * pricePerBird;
     amountInput.value = `GHS ${totalAmount.toFixed(2)}`;
 });
