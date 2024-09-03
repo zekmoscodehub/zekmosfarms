@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Zekmos Hatchery and Farms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 20%;
+            background-color: #555;
+            color: #fff;
+            padding: 15px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .main-content {
+            width: 80%;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #444;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+
+        .orders, .customers, .settings {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Admin Dashboard</h1>
+        <p>Manage your shop products, orders, customers, and settings.</p>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="#add-product">Add Product</a></li>
+                <li><a href="#orders">Orders</a></li>
+                <li><a href="#customers">Customers</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <section id="add-product">
+                <h2>Add Product</h2>
+                <div class="form-group">
+                    <label for="product-name">Product Name</label>
+                    <input type="text" id="product-name" placeholder="Enter product name">
+                </div>
+                <div class="form-group">
+                    <label for="product-description">Product Description</label>
+                    <textarea id="product-description" rows="4" placeholder="Enter product description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="product-price">Product Price (GH₵)</label>
+                    <input type="number" id="product-price" placeholder="Enter product price">
+                </div>
+                <div class="form-group">
+                    <label for="product-status">Product Status</label>
+                    <select id="product-status">
+                        <option value="available">Available</option>
+                        <option value="sold">Sold</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="product-image">Product Image URL</label>
+                    <input type="text" id="product-image" placeholder="Enter product image URL">
+                </div>
+                <div class="form-group">
+                    <button onclick="addProduct()">Add Product</button>
+                </div>
+            </section>
+
+            <section id="orders" class="orders">
+                <h2>Orders</h2>
+                <p>Manage your customer orders here.</p>
+                <!-- Orders management content -->
+            </section>
+
+            <section id="customers" class="customers">
+                <h2>Customers</h2>
+                <p>Manage customer information here.</p>
+                <!-- Customers management content -->
+            </section>
+
+            <section id="settings" class="settings">
+                <h2>Settings</h2>
+                <p>Configure shop settings here.</p>
+                <!-- Settings content -->
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function addProduct() {
+            const name = document.getElementById('product-name').value;
+            const description = document.getElementById('product-description').value;
+            const price = parseFloat(document.getElementById('product-price').value);
+            const status = document.getElementById('product-status').value;
+            const image = document.getElementById('product-image').value;
+
+            // Validate input
+            if (!name || !description || isNaN(price) || !image) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            const newProduct = {
+                id: products.length + 1,
+                name: name,
+                description: description,
+                price: price,
+                status: status,
+                image: image
+            };
+
+            // Add the new product to the products array
+            products.push(newProduct);
+
+            // Store updated products array in localStorage
+            localStorage.setItem('products', JSON.stringify(products));
+
+            alert('Product added successfully!');
+        }
+
+        // Load existing products from localStorage
+        const storedProducts = JSON.parse(localStorage.getItem('products'));
+        const products = storedProducts || [];
+
+        // Function to load products on the shop page
+        function loadProducts() {
+            const productList = document.getElementById('product-list');
+
+            products.forEach(product => {
+                const productItem = document.createElement('div');
+                productItem.className = 'product-item';
+                productItem.innerHTML = `
+                    <div class="badge ${product.status === 'sold' ? 'sold' : 'in-stock'}">${product.status === 'sold' ? 'Sold' : 'In Stock'}</div>
+                    <h3>${product.name}</h3>
+                    <img src="${product.image}" alt="${product.name}">
+                    <p>${product.description}</p>
+                    <p>Price: GH₵${product.price} per item</p>
+                    <label for="quantity-${product.id}">Qty:</label>
+                    <select id="quantity-${product.id}" ${product.status === 'sold' ? 'disabled' : ''}>
+                        <option value="30">30</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                    <button onclick="addToCart(${product.id})" ${product.status === 'sold' ? 'disabled' : ''}>Add to Cart</button>
+                    <a href="cart.html" style="text-decoration:none; background-color:coral; padding:2px 7px;border-radius:15px;border: none;.btn:hover{ color:#fff;background-color:blue;}" class="btn btn-Secondary">Cart</button>
+                `;
+                productList.appendChild(productItem);
+            });
+        }
+    </script>
+</body>
+</html>

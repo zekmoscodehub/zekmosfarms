@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our selection of poultry products and hatching services at Zekmos Hatchery and Farms.">
+    <meta name="keywords" content="shop, poultry products, hatching services, day-old chicks, guinea keets, incubators, farm supplies">
+    <meta name="author" content="Zekmos Hatchery and Farms">
+    <meta property="og:title" content="Shop - Zekmos Hatchery and Farms">
+    <meta property="og:description" content="Explore our wide range of poultry products and services.">
+    <meta property="og:image" content="images/shop-preview.jpg">
+    <meta property="og:url" content="https://yourusername.github.io/repository-name/shop.html">
+    <meta property="og:type" content="website">
+    <title>Shop - Zekmos Hatchery and Farms</title>
+    <link rel="stylesheet" href="css/styl.css">
+    <style>
+        /* Reset some basic elements */
+        body, h1, h2, h3, p, ul, li, img {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            font-size: small;
+            justify-content: center;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            margin: 0px;
+            justify-content: space-around;
+        }
+
+        .logo img {
+            width: 80px;
+            margin: 0px 40px;
+            border-radius: 50%;
+            display: inline;
+            text-align: center;
+        }
+
+        nav {
+            float: right;
+            margin-right: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px 10px 20px;
+        }
+
+        .container {
+            max-width: 100vw;
+            margin: 20px 10px;
+            height: 100%;
+            margin-top: 0;
+            margin-bottom: 50px;
+        }
+
+        .category {
+            margin-bottom: 20px;
+        }
+
+        .category h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .product-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .details {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .details h3 {
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .details p {
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 0.6rem;
+        }
+
+        .details .price {
+            font-size: 0.7rem;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 3px 10px;
+            border-radius: 3px;
+            color: #fff;
+            font-size: 0.7rem;
+        }
+
+        .sold {
+            background-color: #FF0000;
+            font-weight: bold;
+        }
+
+        .in-stock {
+            background-color: #4CAF50;
+        }
+
+        .alert-message {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-radius: 5px;
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button styles */
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn[disabled] {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #ccc;
+            border-top-color: #4CAF50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .cart-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .go-to-cart {
+            background-color: #f39c12;
+            padding: 8px 15px;
+            border-radius: 5px;
+            color: white;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .go-to-cart:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Zekmos Hatchery and Farms">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="home.html#contactFormContainer">Contact</a></li>
+                <!-- <li><a href="cart.html">Cart</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <div class="top">
+        <main>
+            <div class="alert-message" id="alertMessage" style="display: none;">
+                <p id="alertText"></p>
+            </div>
+            <div class="container">
+                <!-- Day-old Birds -->
+                <section class="category" id="day-old-birds">
+                    <h2>Day-Old Birds</h2>
+                    <div class="product-list">
+                        <!-- Example product 1 -->
+                        <div class="product-item" id="product-1">
+                            <div class="badge in-stock">In Stock</div>
+                            <img src="images/chicks.jpg" alt="Day-Old Guinea keet">
+                            <div class="details">
+                                <h3>Day-Old Guinea Keets</h3>
+                                <p>Very healthy day-old chicks ready for brooding.</p>
+                                <p class="price">GH₵22</p>
+                                <button class="btn" onclick="addToCart(1, this)">Add to Cart</button>
+                                <div class="cart-buttons">
+                                    <a href="cart.html" class="go-to-cart" style="display:none;">Go to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                       
+                </section>
+
+               
+                       
+                    
+                </section>
+
+                <!-- Full-Grown Poultry Birds -->
+                <section class="category" id="full-grown-poultry">
+                    
+                       
+                        <!-- Add more product items here -->
+                    
+                    <h2>Full-Grown Poultry Birds</h2>
+                    <div class="product-list">                   
+                       
+                        <!-- Add more product items here -->
+                
+                        <div class="product-item" id="product-7">
+                            <div class="badge in-stock">Sold Out</div>
+                            <img src="images/full-grown-birds.jpg" alt="Full-Grown Poultry Birds">
+                            <div class="details">
+                                <h3>3 Weeks Old Guninea Keets</h3>
+                                <p>High-quality and very active 3 weeks Guineas, Good for start up farms</p>
+                                <p class="price">GH₵35</p>
+                                <button class="btn" onclick="addToCart(1, this)">Add to Cart</button>
+                                <div class="cart-buttons">
+                                    <a href="cart.html" class="go-to-cart" style="display:none;">Go to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item" id="product-7">
+                            <div class="badge sold">Sold Out</div>
+                            <img src="images/full-grown-birds.jpg" alt="Full-Grown Poultry Birds">
+                            <div class="details">
+                                <h3>3 Weeks Old Guninea Keets</h3>
+                                <p>High-quality and very active 3 weeks Guineas, Good for start up farms</p>
+                                <p class="price">GH₵35</p>
+                                <button class="btn" onclick="addToCart(1, this)">Add to Cart</button>
+                                <div class="cart-buttons">
+                                    <a href="cart.html" class="go-to-cart" style="display:none;">Go to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add more product items here -->
+                    </div>
+                </section>
+
+                <!-- Incubators -->
+                <section class="category" id="incubators">
+                    <h2>Incubators</h2>
+                    <div class="product-list">
+                        <!-- Example product 4 -->
+                        <div class="product-item" id="product-4">
+                            <div class="badge in-stock">In Stock</div>
+                            <img src="images/incubator.jpg" alt="Incubator">
+                            <div class="details">
+                                <h3>Incubator</h3>
+                                <p>Reliable incubators for all your hatching needs.</p>
+                                <p class="price">GH₵500</p>
+                                <button class="btn" onclick="addToCart(4, this)">Add to Cart</button>
+                                <div class="cart-buttons">
+                                    <a href="cart.html" class="go-to-cart" style="display:none;">Go to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add more product items here -->
+                    </div>
+                </section>
+
+                <!-- Poultry Drugs -->
+                <section class="category" id="poultry-drugs">
+                    <h2>Poultry Drugs</h2>
+                    <div class="product-list">
+                        <!-- Example product 5 -->
+                        <div class="product-item" id="product-5">
+                            <div class="badge in-stock">In Stock</div>
+                            <img src="images/drugs.jpg" alt="Poultry Drugs">
+                            <div class="details">
+                                <h3>Poultry Drugs</h3>
+                                <p>Essential drugs for keeping your poultry healthy.</p>
+                                <p class="price">GH₵80</p>
+                                <button class="btn" onclick="addToCart(5, this)">Add to Cart</button>
+                                <div class="cart-buttons">
+                                    <a href="cart.html" class="go-to-cart" style="display:none;">Go to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add more product items here -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script>
+       function addToCart(productId, button) {
+    const alertMessage = document.getElementById('alertMessage');
+    const alertText = document.getElementById('alertText');
+    const goToCartButton = button.nextElementSibling.querySelector('.go-to-cart');
+
+    // Simulate adding to cart with a delay
+    button.innerHTML = '<div class="loading"></div> Adding item...';
+    button.disabled = true;
+
+    setTimeout(() => {
+        // Check product status (simulated)
+        const productItem = document.getElementById('product-' + productId);
+        if (productItem.querySelector('.badge').classList.contains('sold')) {
+            alertText.innerText = 'Item out of stock';
+            button.innerHTML = 'Sold Out';
+            button.disabled = true;
+        } else {
+            // Get product details
+            const productName = productItem.querySelector('h3').innerText;
+            const productPrice = productItem.querySelector('.price').innerText;
+            const cartItem = {
+                id: productId,
+                name: productName,
+                price: productPrice,
+                quantity: 1
+            };
+
+            // Save to localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItemIndex = cart.findIndex(item => item.id === productId);
+            if (existingItemIndex > -1) {
+                cart[existingItemIndex].quantity += 1;
+            } else {
+                cart.push(cartItem);
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            alertText.innerText = 'Item added to cart!';
+            button.innerHTML = 'Added!';
+            goToCartButton.style.display = 'inline';
+        }
+        alertMessage.style.display = 'block';
+        setTimeout(() => alertMessage.style.display = 'none', 3000);
+    }, 1000);
+}
+
+    </script>
+</body>
+
+</html>
