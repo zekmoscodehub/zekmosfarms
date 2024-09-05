@@ -47,7 +47,7 @@ const products = [
         id: 7,
         name: 'Brooding Lamp',
         price: '150',
-        description: '150 Wats, Brooding lamp to keep your chicks warm.',
+        description: '150 Watts, Brooding lamp to keep your chicks warm.',
         image: 'bro.jpeg'
     }
 ];
