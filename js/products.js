@@ -11,14 +11,14 @@ const products = [
     {
         id: 2,
         name: 'Day Old Chicks',
-        price:'21',
+        price:'17',
         description: 'Healthy day-old chicks ready for your farm.',
         image: 'img/chicks.jpg'
     },
     {
         id: 3,
         name: 'Day old Guinea Keets',
-        price: '21',
+        price: '16',
         description: 'Vibrant guinea keets for your farm.',
         image: 'img/gc7.jpeg'
     },
@@ -32,7 +32,7 @@ const products = [
     {
         id: 5,
         name: 'Full-grown Guinea Fowl',
-        price: '120',
+        price: '130',
         description: 'Full-grown guinea fowls, best for meat or breeding.',
         image: 'guineas-fowl.jpg'
     },
